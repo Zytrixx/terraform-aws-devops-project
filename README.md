@@ -1,9 +1,13 @@
 
 ## 📌 AWS EC2 Instance Terraform module
 
-Bienvenue sur mon projet !
+Ce projet personnel a pour objectif de mettre en pratique les principes DevOps à travers le déploiement et l'automatisation d'une infrastructure AWS avec Terraform.
 
-### 1. Présentation du projet
+L'infrastructure comprend actuellement un VPC, un subnet public, une Internet Gateway, une table de routage, un Security Group et une instance EC2.
+
+Le projet évoluera progressivement avec l'intégration de Docker, Ansible et GitHub Actions.
+
+## 1. Présentation du projet
 
 ## 2. Objectifs
 
