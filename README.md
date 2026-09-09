@@ -3,7 +3,7 @@
 
 Bienvenue sur mon projet !
 
-## 1. Présentation du projet
+### 1. Présentation du projet
 
 ## 2. Objectifs
 
