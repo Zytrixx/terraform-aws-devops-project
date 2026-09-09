@@ -123,13 +123,12 @@ Dans ce projet, il permet notamment d'accéder à l'instance sans avoir besoin d
 ## 6. Structure du projet
 
 📁 terraform-aws-devops-project/
-│
-├── 📄 .gitignore
-├── 📄 terraform.lock.hcl
-├── 📄 README.md
-├── 📄 main.tf
-├── 📄 outputs.tf
-└── 📄 variables.tf
+    📄 .gitignore
+    📄 terraform.lock.hcl
+    📄 README.md
+    📄 main.tf
+    📄 outputs.tf
+    📄 variables.tf
 
 ### 📄 `.gitignore`
 Définit les fichiers et dossiers qui ne doivent pas être envoyés sur GitHub.
@@ -139,10 +138,6 @@ Il permet notamment d'exclure le dossier `.terraform/`, les fichiers de state Te
 ### 📄 `terraform.lock.hcl`
 Fichier généré par Terraform qui verrouille les versions des providers utilisés par le projet.
 Il permet notamment de garantir que Terraform utilise les mêmes versions de providers lors des différentes exécutions.
-
-### 📄 `README.md`
-Documentation principale du projet.
-Elle présente l'objectif du projet, son architecture, les technologies utilisées, les étapes de déploiement et les connaissances acquises.
 
 ### 📄 `main.tf`
 Contient la définition principale de l'infrastructure AWS.
@@ -158,15 +153,62 @@ Il peut par exemple permettre d'afficher l'ID ou l'adresse IP publique de l'inst
 
 ## 7. Prérequis
 
+- Terraform
+- AWS CLI
+- Un compte AWS
+- Git
+- Un compte GitHub
+
 ## 8. Configuration AWS
 
 ## 9. Déploiement avec Terraform
 
+Les étapes permettant de visualiser la configuration , les changements effectués par Terrafom afin de les déployés sur AWS. 
+
+- init → initialise Terraform et télécharge le provider.
+- validate → vérifie la configuration.
+- plan → montre les changements prévus.
+- apply → applique les changements sur AWS.
+
 ## 10. Vérification
+
+Afin de vérifier que l'infrastructure fonctionne correctement , on peut utiliser la commande 'terraform state list' :
+
+aws_vpc.main
+aws_subnet.public
+aws_internet_gateway.main
+aws_route_table.public
+aws_route_table_association.public
+aws_security_group.web
+aws_instance.web_server
+
 
 ## 11. Sécurité
 
+## Sécurité
+
+- Les fichiers `terraform.tfstate` et `terraform.tfvars` sont exclus du repository.
+- Les credentials AWS ne sont pas stockés dans GitHub.
+- L'accès à l'instance est réalisé via AWS Systems Manager.
+- Le port SSH 22 n'est pas exposé publiquement.
+- Le Security Group autorise actuellement uniquement le trafic HTTP nécessaire à l'application.
+
 ## 12. Ce que j'ai appris
+
+## Ce que j'ai appris
+
+Ce projet m'a permis de mettre en pratique :
+
+- le principe d'Infrastructure as Code ;
+- la syntaxe et le fonctionnement de Terraform ;
+- la gestion des providers et des ressources ;
+- la création d'un réseau AWS avec VPC ;
+- la création de subnets et de tables de routage ;
+- la gestion du trafic avec les Security Groups ;
+- le déploiement d'une instance EC2 ;
+- la gestion des permissions avec IAM ;
+- l'utilisation d'AWS Systems Manager ;
+- le versionnement d'un projet avec Git et GitHub.
 
 ## 13. Prochaines étapes
 
