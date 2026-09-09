@@ -49,8 +49,6 @@ Le projet évoluera progressivement avec l'intégration de Docker, Ansible et Gi
 
 ## 4. Technologies utilisées
 
-## Technologies utilisées
-
 - Terraform
 - Amazon Web Services (AWS)
 - Amazon EC2
@@ -70,7 +68,6 @@ Le projet évoluera progressivement avec l'intégration de Docker, Ansible et Gi
 - Kubernetes
 
 ## 5. Infrastructure AWS
-
 
 ### VPC (Virtual Private Cloud)
 Le VPC est le réseau privé de mon infrastructure AWS.
@@ -185,8 +182,6 @@ aws_instance.web_server
 
 ## 11. Sécurité
 
-## Sécurité
-
 - Les fichiers `terraform.tfstate` et `terraform.tfvars` sont exclus du repository.
 - Les credentials AWS ne sont pas stockés dans GitHub.
 - L'accès à l'instance est réalisé via AWS Systems Manager.
@@ -194,8 +189,6 @@ aws_instance.web_server
 - Le Security Group autorise actuellement uniquement le trafic HTTP nécessaire à l'application.
 
 ## 12. Ce que j'ai appris
-
-## Ce que j'ai appris
 
 Ce projet m'a permis de mettre en pratique :
 
