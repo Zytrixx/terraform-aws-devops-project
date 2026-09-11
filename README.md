@@ -1,5 +1,5 @@
 
-## 📌 AWS EC2 Instance Terraform module
+## 📌 Terraform AWS DevOps Project
 
 ## Tableau des Contenus
 
@@ -47,28 +47,32 @@ Le projet évoluera progressivement avec l'intégration de Docker, Ansible et Gi
 
 ## 3. Architecture
 
-                         AWS
+                       INTERNET
+    
                           │
-                    ┌─────▼─────┐
-                    │    VPC    │
-                    │10.0.0.0/16│
-                    └─────┬─────┘
-                          │
-                 ┌────────▼────────┐
-                 │   Public Subnet │
-                 │   10.0.1.0/24   │
-                 └────────┬────────┘
-                          │
-                     ┌────▼────┐
-                     │   EC2   │
-                     │WebServer│
-                     └─────────┘
-                          │
-                    Security Group
-                          │
-                   Internet Gateway
-                          │
-                       Internet
+                            ▼
+                  ┌─────────────────┐
+                  │ Internet Gateway │
+                  └────────┬────────┘
+                           │
+              ┌────────────▼────────────┐
+              │           VPC           │
+              │       10.0.0.0/16       │
+              │                         │
+              │    Route Table          │
+              │          │              │
+              │          ▼              │
+              │  Public Subnet          │
+              │  10.0.1.0/24            │
+              │          │              │
+              │          ▼              │
+              │    ┌──────────┐         │
+              │    │   EC2    │         │
+              │    └──────────┘         │
+              │          ▲              │
+              │          │              │
+              │   Security Group        │
+              └─────────────────────────┘
 
 ## 4. Technologies utilisées
 
@@ -164,6 +168,12 @@ Dans ce projet, il permet notamment d'accéder à l'instance sans avoir besoin d
     📄 main.tf
     📄 outputs.tf
     📄 variables.tf
+📁 screenshots/
+    📄aws-ec2.png
+    📄aws-securitygroup.png
+    📄aws-vpc.png
+    📄terraform-state.png
+    📄terraformplan.png
 
 ### 📄 `.gitignore`
 Définit les fichiers et dossiers qui ne doivent pas être envoyés sur GitHub.
@@ -196,7 +206,14 @@ Il peut par exemple permettre d'afficher l'ID ou l'adresse IP publique de l'inst
 
 ## 8. Configuration AWS
 
+
 ## 9. Déploiement avec Terraform
+
+Avant d'appliquer les modifications, `terraform plan` permet de
+visualiser les ressources qui seront créées ou modifiées.
+![Terraform Plan](screenshots/terraformplan.png)
+
+
 
 Les étapes permettant de visualiser la configuration , les changements effectués par Terrafom afin de les déployés sur AWS. 
 
