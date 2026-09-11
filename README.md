@@ -25,10 +25,6 @@
 
 - [Sécurité](#11-Sécurité)
 
-- 
-
-
-
 
 ## 1. Présentation du projet
 
