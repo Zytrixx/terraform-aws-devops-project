@@ -164,17 +164,17 @@ Dans ce projet, il permet notamment d'accéder à l'instance sans avoir besoin d
 📁 terraform-aws-devops-project/
  -   📄 .gitignore
   -  📄 terraform.lock.hcl
-    📄 README.md
-    📄 main.tf
-    📄 outputs.tf
-    📄 variables.tf
+  -  📄 README.md
+   - 📄 main.tf
+   - 📄 outputs.tf
+   - 📄 variables.tf
     
 📁 screenshots/
-    📄aws-ec2.png
-    📄aws-securitygroup.png
-    📄aws-vpc.png
-    📄terraform-state.png
-    📄terraformplan.png
+   - 📄aws-ec2.png
+   - 📄aws-securitygroup.png
+   - 📄aws-vpc.png
+   - 📄terraform-state.png
+   - 📄terraformplan.png
 
 ### 📄 `.gitignore`
 Définit les fichiers et dossiers qui ne doivent pas être envoyés sur GitHub.
