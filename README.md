@@ -74,6 +74,7 @@ Le VPC est le réseau privé de mon infrastructure AWS.
 Il permet d'isoler et d'organiser les ressources réseau du projet.
 
 CIDR : `10.0.0.0/16`
+![VPC](screenshots/aws-vpc.png)
 
 ### Subnet public
 Le subnet est une subdivision du VPC dans laquelle est déployée l'instance EC2.
