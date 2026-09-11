@@ -3,7 +3,7 @@
 
 ## Tableau des Contenus
 
-[2. Objectifs](#2-objectifs)
+[- Objectifs](#2-objectifs)
 
 
 
