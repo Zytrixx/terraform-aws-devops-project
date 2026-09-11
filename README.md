@@ -168,6 +168,7 @@ Dans ce projet, il permet notamment d'accéder à l'instance sans avoir besoin d
     📄 main.tf
     📄 outputs.tf
     📄 variables.tf
+    
 📁 screenshots/
     📄aws-ec2.png
     📄aws-securitygroup.png
