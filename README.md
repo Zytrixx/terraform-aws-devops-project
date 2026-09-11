@@ -184,15 +184,9 @@ Les étapes permettant de visualiser la configuration , les changements effectu�
 
 ## 10. Vérification
 
-Afin de vérifier que l'infrastructure fonctionne correctement , on peut utiliser la commande 'terraform state list' :
+Afin de vérifier que l'infrastructure fonctionne correctement , la commande suivante permet de voir les ressources actuellement
+suivies par Terraform 'terraform state list' :
 
-aws_vpc.main
-aws_subnet.public
-aws_internet_gateway.main
-aws_route_table.public
-aws_route_table_association.public
-aws_security_group.web
-aws_instance.web_server
 
 
  ![Terraform Plan](screenshots/terraform-state.png)
