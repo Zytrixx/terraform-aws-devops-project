@@ -6,6 +6,26 @@
 - [Présentation du projet](#1-Présentation-du-projet)
 
 - [Objectifs](#2-objectifs)
+  
+- [Architecture](#3-Archiecture)
+
+- [Technologies utilisées](#4-Technologies-utilisées)
+
+- [Infrastructure AWS](#5-Infrastructure-AWS)
+
+- [Structure du projet](#6-Structure-du-projet)
+
+- [Prérequis](#7-Prérequis)
+
+- [Configuration AWS](#8-Configuration-AWS)
+
+- [Déploiement avec Terraform](#9-Déploiement-avec-Terraform)
+
+- [Vérification](#10-Vérification)
+
+- [Sécurité](#11-Sécurité)
+
+- 
 
 
 
