@@ -190,6 +190,8 @@ aws_instance.web_server
 - Le port SSH 22 n'est pas exposé publiquement.
 - Le Security Group autorise actuellement uniquement le trafic HTTP nécessaire à l'application.
 
+![Architecture Cisco Packet Tracer](aws-securitygroup.png)
+
 ## 12. Ce que j'ai appris
 
 Ce projet m'a permis de mettre en pratique :
