@@ -46,34 +46,8 @@ Le projet évoluera progressivement avec l'intégration de Docker, Ansible et Gi
 - Automatiser progressivement le déploiement d'une application
 
 ## 3. Architecture
-
-                       INTERNET
-    
-                          │
-                            ▼
-                  ┌─────────────────┐
-                  │ Internet Gateway │
-                  └────────┬────────┘
-                           │
-              ┌────────────▼────────────┐
-              │           VPC           │
-              │       10.0.0.0/16       │
-              │                         │
-              │    Route Table          │
-              │          │              │
-              │          ▼              │
-              │  Public Subnet          │
-              │  10.0.1.0/24            │
-              │          │              │
-              │          ▼              │
-              │    ┌──────────┐         │
-              │    │   EC2    │         │
-              │    └──────────┘         │
-              │          ▲              │
-              │          │              │
-              │   Security Group        │
-              └─────────────────────────┘
-
+[![Architecture AWS](screenshots/terraformarchi.png)](screenshots/terraformarchi.png)
+                      
 ## 4. Technologies utilisées
 
 - Terraform
