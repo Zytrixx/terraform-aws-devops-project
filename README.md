@@ -47,6 +47,24 @@ Le projet évoluera progressivement avec l'intégration de Docker, Ansible et Gi
 
 ## 3. Architecture
 [![Architecture AWS](screenshots/terraformarchi.png)](screenshots/terraformarchi.png)
+
+EC2 (Elastic Compute Cloud) est la machine virtuelle qui exécute notre application ou nos services.
+
+L'instance possède généralement :
+
+Private IP : 10.0.1.10
+Public IP  : 3.x.x.x
+
+La Private IP permet la communication à l'intérieur du VPC.
+
+La Public IP permet à l'instance d'être adressable depuis Internet lorsque la configuration réseau et les règles de sécurité l'autorisent.
+
+Le trafic vers l'EC2 passe par le Security Group.
+
+Voir [Infrastructure AWS](#5-Infrastructure-AWS)
+
+
+
                       
 ## 4. Technologies utilisées
 
