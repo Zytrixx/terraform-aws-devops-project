@@ -118,6 +118,7 @@ EC2 fournit une machine virtuelle dans AWS.
 Elle constitue le serveur sur lequel seront déployés les futurs services du projet.
 
 L'instance est déployée dans le subnet public et utilise le Security Group défini par Terraform.
+ ![Terraform Plan](screenshots/aws-ec2.png)
 
 ### IAM Role
 Le rôle IAM définit les permissions accordées à l'instance EC2.
@@ -180,8 +181,6 @@ Les étapes permettant de visualiser la configuration , les changements effectu�
 - validate → vérifie la configuration.
 - plan → montre les changements prévus.
 - apply → applique les changements sur AWS.
-
-  ![Terraform Plan](screenshots/aws-ec2.png)
 
 ## 10. Vérification
 
