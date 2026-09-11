@@ -163,7 +163,7 @@ Dans ce projet, il permet notamment d'accéder à l'instance sans avoir besoin d
 
 📁 terraform-aws-devops-project/
  -   📄 .gitignore
-    📄 terraform.lock.hcl
+  -  📄 terraform.lock.hcl
     📄 README.md
     📄 main.tf
     📄 outputs.tf
