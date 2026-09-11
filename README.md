@@ -193,6 +193,8 @@ aws_route_table.public
 aws_route_table_association.public
 aws_security_group.web
 aws_instance.web_server
+
+
  ![Terraform Plan](screenshots/terraform-state.png)
 
 
