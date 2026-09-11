@@ -167,6 +167,8 @@ Les étapes permettant de visualiser la configuration , les changements effectu�
 - plan → montre les changements prévus.
 - apply → applique les changements sur AWS.
 
+  ![Terraform Plan](screenshots/aws-ec2.png)
+
 ## 10. Vérification
 
 Afin de vérifier que l'infrastructure fonctionne correctement , on peut utiliser la commande 'terraform state list' :
