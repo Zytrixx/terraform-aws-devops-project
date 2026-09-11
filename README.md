@@ -3,11 +3,13 @@
 
 ## Tableau des Contenus
 
-[- Objectifs](#2-objectifs)
+[Présentation du projet](#1-Présentation)
+[Objectifs](#2-objectifs)
 
 
 
-## Présentation du projet
+
+## 1. Présentation du projet
 
 Ce projet personnel a pour objectif de mettre en pratique les principes DevOps à travers le déploiement et l'automatisation d'une infrastructure AWS avec Terraform.
 
