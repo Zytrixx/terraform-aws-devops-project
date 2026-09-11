@@ -73,7 +73,20 @@ Le projet évoluera progressivement avec l'intégration de Docker, Ansible et Gi
 Le VPC est le réseau privé de mon infrastructure AWS.
 Il permet d'isoler et d'organiser les ressources réseau du projet.
 
-CIDR : `10.0.0.0/16`
+Un VPC dédié nommé `terraform-vpc` a été créé avec Terraform.
+
+Il utilise le bloc d'adresses IPv4 :
+
+`10.0.0.0/16`
+
+Le VPC contient un subnet public dans lequel est déployée l'instance EC2.
+
+Le mappage des ressources permet également de visualiser les différents composants réseau associés au VPC, notamment :
+
+- le subnet public `terraform-public-subnet`
+- les tables de routage
+- l'Internet Gateway `terraform-igw`
+  
 ![VPC](screenshots/aws-vpc.png)
 
 ### Subnet public
