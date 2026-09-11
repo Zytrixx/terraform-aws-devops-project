@@ -162,7 +162,7 @@ Dans ce projet, il permet notamment d'accéder à l'instance sans avoir besoin d
 ## 6. Structure du projet
 
 📁 terraform-aws-devops-project/
-    📄 .gitignore
+ -   📄 .gitignore
     📄 terraform.lock.hcl
     📄 README.md
     📄 main.tf
