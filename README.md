@@ -83,10 +83,8 @@ Voir [Infrastructure AWS](#5-Infrastructure-AWS)
 
 ### À venir
 
-- Docker
-- Nginx
 - Ansible
-- GitHub Actions
+- Gitlab CI/CD
 - Monitoring
 - Kubernetes
 
@@ -248,10 +246,61 @@ Docker a été installé et configuré sur une instance Amazon EC2 afin de perme
 ![Docker statuts](screenshots/Docker/statuts.png)
 
 
-### Test d'un conteneur
-docker run hello-world
+### Application web
+
+L'application web a été développée avec Python / Flask, puis conteneurisée avec Docker afin de garantir un environnement d'exécution reproductible.
+
+### Architecture
+
+![Architecture](screenshots/Docker/architecture.png)
 
 
+Création de l'image Docker : 
+
+L'image est construite à partir du Dockerfile 
+
+docker build -t devops-app .
+
+Vérification de l'image :
+
+docker images
+
+Exécution du conteneur : 
+
+L'application est exécutée dans un conteneur Docker et exposée sur le port 80 
+
+docker run -d -p 80:80 --name devops-app devops-app
+
+Vérification du conteneur :
+
+docker ps
+
+L'application peut ensuite être testée avec :
+
+curl http://localhost
+
+ou depuis un navigateur :
+
+http://<PUBLIC-IP-EC2>
+Publication de l'image dans Amazon ECR
+
+L'image Docker est ensuite publiée dans un repository Amazon ECR.
+
+Connexion à ECR :
+
+aws ecr get-login-password --region eu-central-1 \
+| docker login --username AWS --password-stdin \
+699125385872.dkr.ecr.eu-central-1.amazonaws.com
+
+Tag de l'image :
+
+docker tag devops-app \
+699125385872.dkr.ecr.eu-central-1.amazonaws.com/hello-repository:latest
+
+Push vers ECR :
+
+docker push \
+699125385872.dkr.ecr.eu-central-1.amazonaws.com/hello-repository:latest
 
 
 
