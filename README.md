@@ -25,6 +25,10 @@
 
 - [Sécurité](#11-Sécurité)
 
+- [Docker](#12-Docker)
+
+- [Ce que j'ai appris](#13-Ce-que-j'ai-appris)
+
 
 ##  1. Présentation du projet
 
@@ -46,7 +50,7 @@ Le projet évoluera progressivement avec l'intégration de Docker, Ansible et Gi
 - Automatiser progressivement le déploiement d'une application
 
 ## 3. Architecture
-[![Architecture AWS](screenshots/terraformarchi.png)](screenshots/terraformarchi.png)
+[![Architecture AWS](screenshots/EC2/terraformarchi.png)](screenshots/EC2/terraformarchi.png)
 
 EC2 (Elastic Compute Cloud) est la machine virtuelle qui exécute notre application ou nos services.
 
@@ -235,7 +239,16 @@ suivies par Terraform 'terraform state list' :
 
 ![Architecture Cisco Packet Tracer](screenshots/aws-securitygroup.png)
 
-## 12. Ce que j'ai appris
+## 12. Docker
+
+
+
+
+
+
+
+
+## 13. Ce que j'ai appris
 
 Ce projet m'a permis de mettre en pratique :
 
@@ -250,6 +263,5 @@ Ce projet m'a permis de mettre en pratique :
 - l'utilisation d'AWS Systems Manager ;
 - le versionnement d'un projet avec Git et GitHub.
 
-## 13. Prochaines étapes
 
-## 14. Nettoyage de l'infrastructure
+
