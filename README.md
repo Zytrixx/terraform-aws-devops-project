@@ -245,7 +245,7 @@ suivies par Terraform 'terraform state list' :
 
 Docker a été installé et configuré sur une instance Amazon EC2 afin de permettre l'exécution et le déploiement de conteneurs.
 
-![Docker statuts](screenshots/statuts.png)
+![Docker statuts](screenshots/Docker/statuts.png)
 
 
 ### Test d'un conteneur
