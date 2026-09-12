@@ -241,8 +241,15 @@ suivies par Terraform 'terraform state list' :
 
 ## 12. Docker
 
+🐳 Docker sur AWS EC2
+
+Docker a été installé et configuré sur une instance Amazon EC2 afin de permettre l'exécution et le déploiement de conteneurs.
+
+![Docker statuts](screenshots/statuts.png)
 
 
+### Test d'un conteneur
+docker run hello-world
 
 
 
