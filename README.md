@@ -302,6 +302,8 @@ Push vers ECR :
 docker push \
 699125385872.dkr.ecr.eu-central-1.amazonaws.com/hello-repository:latest
 
+![Resultat](screenshots/Docker/resultat.png)
+
 
 
 ## 13. Ce que j'ai appris
