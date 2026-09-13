@@ -72,19 +72,21 @@ Voir [Infrastructure AWS](#5-Infrastructure-AWS)
                       
 ## 4. Technologies utilisées
 
-- Terraform
-- Amazon Web Services (AWS)
-- Amazon EC2
-- Amazon VPC
-- IAM
-- AWS Systems Manager
+- Terraform = Infrastructure as code
+- Amazon Web Services (AWS) = Cloud provider
+- Amazon EC2 = Machine virtuelle
+- Amazon VPC = Réseau virtuel
+- IAM = Gestion des permissions
+- AWS Systems Manager = Administration de l'EC2
 - Git
-- GitHub
+- GitHub = Hébergement du code
+- Docker = Conteneurisation
+- Gitlab CI/CD = Pipeline CI/CD — en cours d'intégration
 
 ### À venir
 
-- Ansible
-- Gitlab CI/CD
+- Gitlab CI/CD - en cours
+- Pipeline CI/CD — en cours d'intégration
 - Monitoring
 - Kubernetes
 
@@ -305,8 +307,51 @@ docker push \
 ![Resultat](screenshots/Docker/resultat.png)
 
 
+## 13. CI/CD Gitlab
 
-## 13. Ce que j'ai appris
+La pipeline en plusieurs étapes : 
+<img width="385" height="56" alt="image" src="https://github.com/user-attachments/assets/b7033053-4a31-4ecc-81ec-906ab177e474" />
+
+
+Tests
+
+Le pipeline exécute les tests Python avant de poursuivre le déploiement.
+
+Exemple :
+
+pip install -r requirements.txt
+python -m py_compile app.py
+
+Cette étape permet de vérifier que le code Python peut être compilé correctement.
+
+Build Docker
+
+L'étape suivante consiste à construire l'image Docker de l'application.
+
+L'image est construite avec Docker et reçoit un tag basé sur le commit GitLab.
+
+Amazon ECR
+
+L'image Docker est ensuite destinée à être envoyée vers Amazon Elastic Container Registry (ECR).
+
+Le repository utilisé pour l'application est :
+
+devops-app
+
+Le registre ECR est situé dans la région :
+
+eu-central-1
+Authentification AWS
+
+L'intégration GitLab → AWS utilise une authentification basée sur OIDC (OpenID Connect) afin d'obtenir des credentials temporaires.
+
+Cette approche évite de stocker directement une clé AWS permanente dans GitLab.
+
+ℹ️ L'intégration OIDC GitLab → AWS est actuellement en cours de finalisation.
+
+
+
+## . Ce que j'ai appris
 
 Ce projet m'a permis de mettre en pratique :
 
