@@ -310,7 +310,9 @@ docker push \
 ## 13. CI/CD Gitlab
 
 La pipeline en plusieurs étapes : 
-<img width="385" height="56" alt="image" src="https://github.com/user-attachments/assets/b7033053-4a31-4ecc-81ec-906ab177e474" />
+
+
+<img width="429" height="73" alt="image" src="https://github.com/user-attachments/assets/f65e36ee-7c27-40f7-96a9-1f3da3882f13" />
 
 
 Tests
@@ -365,6 +367,48 @@ Ce projet m'a permis de mettre en pratique :
 - la gestion des permissions avec IAM ;
 - l'utilisation d'AWS Systems Manager ;
 - le versionnement d'un projet avec Git et GitHub.
+
+### 📈 Prochaines étapes
+
+Le projet sera progressivement enrichi avec :
+
+X Création du VPC avec Terraform
+
+X Création du subnet public
+
+X Internet Gateway
+
+X Route Table
+
+X Security Group
+
+X Instance EC2
+
+X IAM Role / Instance Profile
+
+X AWS Systems Manager
+
+X Versionnement Git / GitHub
+
+X Première intégration Docker
+
+X Création du pipeline GitLab CI/CD
+
+X Tests automatisés
+
+X Build de l'image Docker
+
+X Préparation du push vers Amazon ECR
+
+Finalisation de l'authentification GitLab OIDC → AWS
+
+Déploiement automatisé de l'application
+
+Intégration Ansible
+
+Monitoring
+
+Kubernetes
 
 
 
