@@ -16,7 +16,7 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+    values = ["al2023-ami-*-x86_64"]
   }
 
   filter {
@@ -38,6 +38,13 @@ resource "aws_instance" "web_server" {
 
 
 
+  root_block_device {
+    volume_size = 20
+    volume_type = "gp3"
+  }
+
+
+
   user_data = <<-EOF
               #!/bin/bash
               cd /tmp
@@ -50,6 +57,7 @@ resource "aws_instance" "web_server" {
     Name = "TerraformWebServer"
   }
 }
+
 
 resource "aws_iam_instance_profile" "ssm_profile" {
   name = "ec2-ssm-profile"
@@ -71,10 +79,12 @@ resource "aws_iam_role" "ssm_role" {
   })
 }
 
+
 resource "aws_iam_role_policy_attachment" "ssm_policy" {
   role       = aws_iam_role.ssm_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
+
 
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
@@ -143,4 +153,101 @@ resource "aws_security_group" "web" {
   tags = {
     Name = "terraform-web-sg"
   }
+}
+
+resource "aws_iam_openid_connect_provider" "gitlab" {
+  url = "https://gitlab.com"
+
+  client_id_list = [
+    "sts.amazonaws.com"
+  ]
+}
+
+
+resource "aws_iam_role" "gitlab_ecr_role" {
+  name = "gitlab-ecr-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+
+    Statement = [
+      {
+        Effect = "Allow"
+
+        Principal = {
+          Federated = aws_iam_openid_connect_provider.gitlab.arn
+        }
+
+        Action = "sts:AssumeRoleWithWebIdentity"
+
+        Condition = {
+          StringLike = {
+            "gitlab.com:aud"        = "sts.amazonaws.com"
+            "gitlab.com:project_id" = "86384189"
+          }
+
+          StringLike = {
+            "gitlab.com:sub" = "project_path:zytrixx/devops-app:ref_type:branch:ref:*"
+          }
+        }
+      }
+    ]
+  })
+}
+
+resource "aws_ecr_repository" "app" {
+  name                 = "devops-app"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+
+  tags = {
+    Name = "devops-app"
+  }
+}
+
+
+resource "aws_iam_role_policy" "gitlab_ecr_policy" {
+  name = "gitlab-ecr-policy"
+  role = aws_iam_role.gitlab_ecr_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+
+    Statement = [
+      {
+        Effect = "Allow"
+
+        Action = [
+          "ecr:GetAuthorizationToken"
+        ]
+
+        Resource = "*"
+      },
+      {
+        Effect = "Allow"
+
+        Action = [
+          "ecr:BatchCheckLayerAvailability",
+          "ecr:CompleteLayerUpload",
+          "ecr:InitiateLayerUpload",
+          "ecr:PutImage",
+          "ecr:UploadLayerPart"
+        ]
+
+        Resource = aws_ecr_repository.app.arn
+      }
+    ]
+  })
+}
+
+
+output "ecr_repository_url" {
+  value = aws_ecr_repository.app.repository_url
+}
+
+output "gitlab_ecr_role_arn" {
+  value = aws_iam_role.gitlab_ecr_role.arn
 }
